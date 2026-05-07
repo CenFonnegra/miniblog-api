@@ -1,15 +1,17 @@
 const express = require('express');
 const app = express();
 
+const authorsRoutes = require('./routes/authors.routes');
+
+const pool = require('./db');
+
 app.use(express.json());
+
+app.use('/authors', authorsRoutes);
 
 app.get('/', (req, res) =>{
     res.send('API MiniBlog iniciado');
 });
-
-module.exports = app;
-
-const pool = require('./db');
 
 pool.query('SELECT NOW()', (err, res) => {
   if (err) {
@@ -18,3 +20,5 @@ pool.query('SELECT NOW()', (err, res) => {
     console.log('DB conectada:', res.rows);
   }
 });
+
+module.exports = app;
