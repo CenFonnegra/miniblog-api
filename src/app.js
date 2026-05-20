@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 
+const swaggerUi = require('swagger-ui-express');
+
+const swaggerSpec = require('./docs/swagger');
+
 const authorsRoutes = require('./routes/authors.routes');
 
 const postsRoutes = require('./routes/posts.routes');
@@ -24,5 +28,7 @@ pool.query('SELECT NOW()', (err, res) => {
     console.log('DB conectada:', res.rows);
   }
 });
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 module.exports = app;
