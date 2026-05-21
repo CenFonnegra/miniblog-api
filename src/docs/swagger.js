@@ -10,9 +10,9 @@ const options = {
         },
         servers: [
             {
-                url: 'http://localhost:3000'
+              url: 'https://miniblog-api-production-cafb.up.railway.app'
             }
-        ]
+          ]
     },
     apis: ['./src/routes/*.js']
 };
