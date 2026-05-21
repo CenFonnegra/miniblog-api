@@ -118,7 +118,7 @@ PORT=3000
 Ejecutar:
 
 ```bash
-psql -U postgres -d miniblog -f sql/setup.sql
+psql -U postgres -d miniblog -f src/sql/setup.sql
 ```
 
 ---
