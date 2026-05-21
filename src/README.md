@@ -15,21 +15,45 @@ API REST desarrollada con Node.js, Express y PostgreSQL para la gestión de auto
 
 ---
 
-# Estructura del proyecto
+# 📂 Estructura del proyecto
 
 ```bash
-miniblog-api/
-├── Desarrollo/
+MINIBLOG-API
+│
+├── node_modules/
+│
 ├── src/
-├── controller/
+│   ├── controllers/
+│   │   ├── authors.controller.js
+│   │   └── posts.controller.js
+│   │
+│   ├── db/
+│   │   └── index.js
+│   │
+│   ├── docs/
+│   │   └── swagger.js
+│   │
+│   ├── routes/
+│   │   ├── authors.routes.js
+│   │   └── posts.routes.js
+│   │
+│   ├── sql/
+│   │   ├── setup.sql
+│   │   └── seed.sql
+│   │
+│   ├── app.js
+│   └── server.js
+│
 ├── tests/
-├── sql/
-│   ├── setup.sql
-│   └── seed.sql
+│   ├── authors.test.js
+│   └── posts.test.js
 │
 ├── .env.example
-├── package.json
-├── README.md
+├── .gitignore
+├── generate-openapi.js
+├── openapi.json
+├── package-lock.json
+└── package.json
 ```
 
 ---
@@ -102,7 +126,7 @@ psql -U postgres -d miniblog -f sql/setup.sql
 ## Insertar datos de ejemplo
 
 ```bash
-psql -U postgres -d miniblog -f sql/seed.sql
+psql -U postgres -d miniblog -f src/sql/setup.sql
 ```
 
 ---
@@ -201,6 +225,6 @@ Todo el código fue comprendido, probado y adaptado manualmente.
 
 ---
 
-# BY
+# 👨‍💻 Autor
 
 Fabian Fonnegra
